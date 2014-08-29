@@ -5,12 +5,15 @@
  */
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
 body {
+  background-image:url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTRmNRL_VeQa1GdOYVuDNB3HSY0dlzYfO8aZm8ehe8DDobdZMCDbQ);
   margin: 0;
 }
 article,
