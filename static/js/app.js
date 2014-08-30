@@ -61,18 +61,22 @@
     }
     function displayMovies(data) {
         data.results.forEach(function(movie) {
-            var imageSrc = config.images.base_url + config.images.poster_sizes[1] + movie.poster_path;
-            var htmlStr = [
-                            '<div class="col-md-4 portfolio-item">',
-                                '<a href="/view/'+movie.id+'">',
-                                    '<img class="img-responsive" src="' + imageSrc + '" alt="">',
-                                '</a>',
-                                '<h9>',
-                                    '<a href="/view/'+movie.id+'">' + movie.title +'</a>',
-                                '</h9>',
-                            '</div>'
-                            ];
-            $('.movies-list').append($(htmlStr.join('')));
+            var poster = config.images.base_url + config.images.poster_sizes[1] + movie.poster_path;
+            movie.poster = poster;
+
+            console.log(movie.poster);
+            var markup = Handlebars.compile($("#movie_block").html())(movie);
+            //var htmlStr = 
+             //               '<div class="col-md-4 portfolio-item">',
+               //                 '<a href="/view/'+movie.id+'">',
+                 //                   '<img class="img-responsive" src="' + imageSrc + '" alt="">',
+                   //             '</a>',
+                     //           '<h9>',
+                       //             '<a href="/view/'+movie.id+'">' + movie.title +'</a>',
+                         //       '</h9>',
+                           // '</div>'
+                           // ];
+            $('.movies-list').append(markup);
         });
     }
 
